@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var grids_size = 16
+var grids_size = 64
 
 var inputs = {
 	'ui_up': Vector2.UP,

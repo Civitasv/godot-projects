@@ -5,7 +5,7 @@
 [ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 7.5 )
+extents = Vector2( 29.5, 27 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -15,12 +15,12 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8.5 )
+position = Vector2( 32.5, 31 )
 shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 8, 8 )
-cast_to = Vector2( 0, 16 )
+position = Vector2( 32, 32 )
+cast_to = Vector2( 0, 64 )
 
 [node name="Tween" type="Tween" parent="."]
 

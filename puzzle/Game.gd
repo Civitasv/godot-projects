@@ -11,8 +11,6 @@ func check():
 	if game_end == true:
 		return
 	
-	$UI/MovesLabel.text = 'Moves: ' + str(moves)
-	
 	var spots = $Spots.get_child_count()
 	
 	for i in $Spots.get_children():
@@ -20,9 +18,11 @@ func check():
 			spots -= 1
 	
 	if spots == 0:
-		$UI/AcceptDialog.popup()
+		$UI/Success.show()
 		game_end = true
 
 
-func _on_AcceptDialog_confirmed():
-	get_tree().reload_current_scene()
+func _unhandled_input(event):
+	if game_end:
+		if event.is_action_pressed("ui_accept"):
+			get_tree().reload_current_scene()
