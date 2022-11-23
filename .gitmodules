@@ -1,0 +1,3 @@
+[submodule "berserk"]
+	path = berserk
+	url = git@github.com:Civitasv/berserk.git
