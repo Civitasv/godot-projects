@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/player.png" type="Texture" id=1]
+[ext_resource path="res://Assets/player.png" type="Texture2D" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/footstep.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.5, 27 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource( 2 )
 
-[node name="Player" type="Sprite" parent="."]
+[node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
@@ -20,7 +20,7 @@ shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 32, 32 )
-cast_to = Vector2( 0, 64 )
+target_position = Vector2( 0, 64 )
 
 [node name="Tween" type="Tween" parent="."]
 

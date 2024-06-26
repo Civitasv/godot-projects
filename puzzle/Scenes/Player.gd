@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var grids_size = 64
 
@@ -9,7 +9,7 @@ var inputs = {
 	'ui_left': Vector2.LEFT,
 }
 
-onready var ray = $RayCast2D
+@onready var ray = $RayCast2D
 
 func _unhandled_input(event):
 	for dir in inputs.keys():
@@ -22,7 +22,7 @@ func _unhandled_input(event):
 func move(dir):
 	var game = get_parent()
 	var vector_pos = inputs[dir] * grids_size
-	ray.cast_to = vector_pos
+	ray.target_position = vector_pos
 	ray.force_raycast_update()
 	$Tween.interpolate_property(
 		self, 
